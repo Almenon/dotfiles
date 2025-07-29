@@ -15,3 +15,5 @@ done
 ```
 
 Then run `~/dotfiles/setup.sh`
+
+Proceed with manually adjusting any other noted settings / files
