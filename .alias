@@ -1,0 +1,79 @@
+alias logout="exit"
+alias rm="rm -I"
+alias cp="cp -i"
+alias mv="mv -i"
+alias users="cut -d : -f 1 /etc/passwd"
+alias packages="dpkg --list"
+alias programs="dpkg --list"
+alias cwd=pwd
+alias demons="ps -eo 'tty,pid,comm' | grep ^?"
+alias daemons="ps -eo 'tty,pid,comm' | grep ^?"
+alias services="service --status-all"
+alias nodejs=node
+alias python=python3
+alias pip=pip3
+alias zombies="ps aux | grep 'Z' # pstree -p -s PID to find parent"
+alias c="xclip -selection clipboard"
+# alias c="pbcopy" # if you're on mac
+alias gs="git status"
+#alias night="xrandr --output $(xrandr | grep " connected" | cut -f1 -d " ") --brightness .75"
+#alias day="xrandr --output $(xrandr | grep " connected" | cut -f1 -d " ") --brightness 1"
+alias ds="dig +short "
+alias activate="source venv/bin/activate"
+alias a="source .venv/bin/activate"
+alias k=kubectl
+alias h=helm
+alias hf=helmfile
+alias rand32="openssl rand -base64 32 | cut -c1-32"
+alias mysql="mysqlsh"
+alias dev="export AWS_PROFILE=dev"
+#alias prod="export AWS_PROFILE=prod;export PS1='%(?:%{%}➜ :%{%}➜ ) %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info) $fg[red]PROD$reset_color '"
+
+######################### Functions
+
+ns() {
+  kubectl config set-context --current --namespace=$1
+}
+
+function jwt(){
+    jq -R 'split(".") | .[0,1] | @base64d | fromjson' <<< "$1"
+}
+
+# replace namegoeshere with your desired session name!
+assume() {
+    export $(printf "AWS_ACCESS_KEY_ID=%s AWS_SECRET_ACCESS_KEY=%s AWS_SESSION_TOKEN=%s" \
+    $(aws sts assume-role \
+    --role-arn $1 \
+    --role-session-name namegoeshere \
+    --query "Credentials.[AccessKeyId,SecretAccessKey,SessionToken]" \
+    --output text))
+}
+
+# FOR THE LOVE OF GOD BE CAREFUL WITH THIS
+# ITS LITERALLY IMPOSSIBLE TO RECOVER YOUR DATA
+permaNuke() { find . -type f -exec shred -vzu {} \; }
+
+cl() { cd "$@" && ls; }
+cla() { cd "$@" && ls -la; }
+
+# changing colors:
+# dircolors --print-database > ~/.dircolors
+# then just modify ~/.dircolors (bashrc will automatically load it)
+
+trash() { mv "$@" ~/.local/share/Trash; }
+
+################################ Environment Variables
+
+export KUBE_EDITOR='code --wait'
+
+
+##############
+# WSL-specific
+##############
+
+# to use windows npm
+# see https://github.com/Microsoft/WSL/issues/2370
+#npmW() { cmd.exe /C "npm $* 2>&1 < NUL | cat"; }
+#cmd() { cmd.exe /C "$*"; }
+
+# if you want to use windows node see https://github.com/Microsoft/WSL/issues/2370
