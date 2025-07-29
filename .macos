@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# lots of other goodies in https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
