@@ -14,7 +14,9 @@ alias python=python3
 alias pip=pip3
 alias zombies="ps aux | grep 'Z' # pstree -p -s PID to find parent"
 alias c="xclip -selection clipboard"
-# alias c="pbcopy" # if you're on mac
+if [ "$(uname)" == "Darwin" ]; then
+  alias c="pbcopy"
+fi
 alias gs="git status"
 #alias night="xrandr --output $(xrandr | grep " connected" | cut -f1 -d " ") --brightness .75"
 #alias day="xrandr --output $(xrandr | grep " connected" | cut -f1 -d " ") --brightness 1"
