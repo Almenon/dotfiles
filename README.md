@@ -13,3 +13,5 @@ for DOTFILE in dotfiles/.alias; do
   . "$DOTFILE"
 done
 ```
+
+Then run `~/dotfiles/setup.sh`
