@@ -9,7 +9,7 @@ Now I need a git repo to package everything!
 In .profile:
 ```
 # {.example,.alias} for more loading
-for DOTFILE in dotfiles/.alias; do
+for DOTFILE in ~/dotfiles/.alias; do
   . "$DOTFILE"
 done
 ```
