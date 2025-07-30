@@ -6,7 +6,7 @@ I used to just a simple github gist for my bash aliases, but as the years progre
 Now I need a git repo to package everything!
 
 ## Setup
-In .profile:
+In .zshrc:
 ```
 # {.example,.alias} for more loading
 for DOTFILE in ~/dotfiles/.alias; do
@@ -14,6 +14,6 @@ for DOTFILE in ~/dotfiles/.alias; do
 done
 ```
 
-Then run `~/dotfiles/setup.sh`
+Then go to repo root and run `./setup.sh`
 
 Proceed with manually adjusting any other noted settings / files
