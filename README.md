@@ -17,3 +17,7 @@ done
 Then go to repo root and run `./setup.sh`
 
 Proceed with manually adjusting any other noted settings / files
+
+## Manual adjustments
+* manual adjustments in .macos if on mac
+* chrome settings -> appearance -> page view 110%
