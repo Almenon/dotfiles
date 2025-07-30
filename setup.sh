@@ -12,7 +12,7 @@ if [ "$(uname)" == "Linux" ]; then
 fi
 
 if [ "$(uname)" == "Darwin" ]; then
-    source .macos
+    ./.macos
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     brew install pipx
     pipx ensurepath
