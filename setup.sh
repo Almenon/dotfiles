@@ -17,7 +17,6 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install pipx
     pipx ensurepath
     sudo pipx ensurepath --global
-fi
 elif ["$DISTRO" == "Ubuntu" ]; then
     apt install net-tools
     apt install dnsutils
