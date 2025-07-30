@@ -1,6 +1,14 @@
 #!/bin/bash
 
+# To change manually:
+# system settings -> trackpad -> secondary click bottom right corner
+# finder settings -> sidebar -> enable pictures & home dir
+
+
+
+# todo: this isn't working, exit code is 0 but nothing happens even when I log out & log back in
+
 # lots of other goodies in https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+#defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+#defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
