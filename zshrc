@@ -1,1 +1,2 @@
-plugins=(git asdf)
+plugins=(git)
+# todo what theme?
