@@ -22,4 +22,7 @@ if [ "$(uname)" == "Darwin" ]; then
 elif [ "$DISTRO" == 'Ubuntu' ]; then
     sudo apt install net-tools
     sudo apt install dnsutils
+    sudo apt install pipx
+    pipx ensurepath
+    sudo pipx ensurepath --global
 fi
