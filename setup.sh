@@ -13,6 +13,8 @@ if [ "$(uname)" == "Linux" ]; then
     fi
 fi
 
+mkdir -p ~/.local/share/Trash
+
 if [ "$(uname)" == "Darwin" ]; then
     ./.macos
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
