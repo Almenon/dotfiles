@@ -21,3 +21,4 @@ Proceed with manually adjusting any other noted settings / files
 ## Manual adjustments
 * manual adjustments in .macos if on mac
 * chrome settings -> appearance -> page view 110%
+* default oh-my-zsh terminal colors may be ugly, see https://www.reddit.com/r/zsh/comments/11whqrj/how_to_change_color_of_directories_in_ohmyzsh/jcy04cu/ for a fix
