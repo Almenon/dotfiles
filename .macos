@@ -9,6 +9,9 @@
 # Make keyboard key repeat rate fast in macos keyboard settings
 # Download iterm2
 # change keyboard shortcut home to send hex code 0x01
+# change keyboard shortcut end to send hex code 0x05
+# cmd left to escape sequence b (to jump words)
+# cmd right to escape sequence f (to jump words)
 
 
 
