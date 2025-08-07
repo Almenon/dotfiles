@@ -28,6 +28,7 @@ alias h=helm
 alias hf=helmfile
 alias rand32="openssl rand -base64 32 | cut -c1-32"
 alias mysql="mysqlsh"
+alias eyes='~/dotfiles/eyes.sh &'
 alias dev="export AWS_PROFILE=dev"
 #alias prod="export AWS_PROFILE=prod;export PS1='%(?:%{%}➜ :%{%}➜ ) %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info) $fg[red]PROD$reset_color '"
 
