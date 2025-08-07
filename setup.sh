@@ -15,13 +15,17 @@ fi
 
 mkdir -p ~/.local/share/Trash
 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install cheat
+
 if [ "$(uname)" == "Darwin" ]; then
     ./.macos
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     brew install pipx
     pipx ensurepath
     sudo pipx ensurepath --global
 elif [ "$DISTRO" == 'Ubuntu' ]; then
+    # if not on linux i prioritize not using brew
+    # as I find other tools to be more reliable
     sudo apt install net-tools
     sudo apt install dnsutils
     sudo apt install pipx
