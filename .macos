@@ -4,6 +4,7 @@
 # system settings -> trackpad -> secondary click bottom right corner
 # Keyboard -> shortcuts -> screenshots -> configure desired hotkey (cmd-shift-4 to copy)
 # Keyboard -> shortcuts -> function keys -> check use f1, f2, etc. Keys as standard function keys
+# Keyboard -> shortcuts -> mission control -> uncheck Show Desktop F11.
 # Make keyboard key repeat rate fast in macos keyboard settings
 # change history shortcut for chrome: https://superuser.com/questions/497526/customize-google-chrome-keyboard-shortcuts
 # add lockscreen shortcut "Lock Screen" -> cmd-shift-l
