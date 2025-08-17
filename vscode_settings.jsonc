@@ -1,3 +1,4 @@
 {
-    "editor.gotoLocation.multipleDefinitions": "goto"
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "terminal.integrated.scrollback": 10000
 }
