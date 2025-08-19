@@ -69,6 +69,9 @@ trash() { mv "$@" ~/.local/share/Trash; }
 
 export KUBE_EDITOR='code --wait'
 
+################################ Special stuff
+# special zsh function to make error more obvious
+precmd() { eval 'if [ $? -ne 0 ]; then echo "☠  死了!\n"; fi' }
 
 ##############
 # WSL-specific
