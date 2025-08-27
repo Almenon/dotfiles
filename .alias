@@ -54,7 +54,7 @@ assume() {
 
 # FOR THE LOVE OF GOD BE CAREFUL WITH THIS
 # ITS LITERALLY IMPOSSIBLE TO RECOVER YOUR DATA
-permaNuke() { find . -type f -exec shred -vzu {} \; }
+# permaNuke() { find . -type f -exec shred -vzu {} \; }
 
 cl() { cd "$@" && ls; }
 cla() { cd "$@" && ls -la; }
@@ -71,7 +71,10 @@ export KUBE_EDITOR='code --wait'
 
 ################################ Special stuff
 # special zsh function to make error more obvious
-precmd() { eval 'if [ $? -ne 0 ]; then echo "☠  死了!\n"; fi' }
+
+if [[ "$SHELL" == "/usr/bin/zsh" ]]; then
+  precmd() { eval 'if [ $? -ne 0 ]; then echo "☠  死了!\n"; fi'; }
+fi
 
 ##############
 # WSL-specific
