@@ -33,3 +33,7 @@
     ll = "git ls-files --stage"
 
     nuke = "git reset HEAD --hard"
+
+[core]
+
+    editor = code --wait
