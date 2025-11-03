@@ -28,7 +28,33 @@ elif [ "$DISTRO" == 'Ubuntu' ]; then
     # as I find other tools to be more reliable
     sudo apt install net-tools
     sudo apt install dnsutils
+    sudo apt install python-pip
     sudo apt install pipx
+    sudo apt install unzip
+    sudo apt install zsh
     pipx ensurepath
     sudo pipx ensurepath --global
+
+    # for pyenv
+    sudo apt install build-essential libssl-dev zlib1g-dev \
+    libbz2-dev libreadline-dev libsqlite3-dev curl git \
+    libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 fi
+
+if ! command -v aws 2>&1 >/dev/null
+then
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    sudo ./aws/install
+else
+    echo "skipping aws, already installed"
+fi
+
+if ! command -v pyenv 2>&1 >/dev/null
+then
+    curl -fsSL https://pyenv.run | bash
+else
+    echo "Skipping pyenv, already installed"
+fi
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
