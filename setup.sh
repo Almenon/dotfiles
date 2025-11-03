@@ -23,6 +23,9 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install pipx
     pipx ensurepath
     sudo pipx ensurepath --global
+
+    # for pyenv
+    brew install openssl readline sqlite3 xz tcl-tk@8 libb2 zstd zlib pkgconfig
 elif [ "$DISTRO" == 'Ubuntu' ]; then
     # if not on linux i prioritize not using brew
     # as I find other tools to be more reliable
@@ -36,7 +39,7 @@ elif [ "$DISTRO" == 'Ubuntu' ]; then
     sudo pipx ensurepath --global
 
     # for pyenv
-    sudo apt install build-essential libssl-dev zlib1g-dev \
+    sudo apt update; sudo apt install make build-essential libssl-dev zlib1g-dev \
     libbz2-dev libreadline-dev libsqlite3-dev curl git \
     libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 fi
