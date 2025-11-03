@@ -15,14 +15,14 @@ fi
 
 mkdir -p ~/.local/share/Trash
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install cheat
-
 if [ "$(uname)" == "Darwin" ]; then
     ./.macos
+
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew install cheat
     brew install pipx
     pipx ensurepath
-    sudo pipx ensurepath --global
+    sudo pipx ensurepath
 
     # for pyenv
     brew install openssl readline sqlite3 xz tcl-tk@8 libb2 zstd zlib pkgconfig
@@ -36,7 +36,7 @@ elif [ "$DISTRO" == 'Ubuntu' ]; then
     sudo apt install unzip
     sudo apt install zsh
     pipx ensurepath
-    sudo pipx ensurepath --global
+    sudo pipx ensurepath
 
     # for pyenv
     sudo apt update; sudo apt install make build-essential libssl-dev zlib1g-dev \
